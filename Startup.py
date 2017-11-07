@@ -15,11 +15,10 @@ from ZeroWM import log            # Enable logging function
 from ZeroWM import preferences    # Allow access to preferences
 from ZeroWM import windowManager  # Allow direct control of window manager
 
-import random  # FOR TESTING - REMOVE
 """This function will be executed when the window manager is ready."""
 def onStart():
-    windowManager.runProcess(preferences.wallpaper.wallpaperCommand)    # Set wallpaper at startup
-#    pass
+    #windowManager.runProcess(preferences.wallpaper.wallpaperCommand)    # Set wallpaper at startup
+    pass
 
 """This function will be executed when the window manager shuts down cleanly"""
 def onStop():

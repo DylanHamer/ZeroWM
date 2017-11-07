@@ -78,9 +78,6 @@ class wm(object):
 
     def updateBorders(self):
         for window in self.windowList:
-            #gc = self.rootWindow.create_gc()
-            #window.fill_rectangle(gc, 0, window.get_geometry().y-5, window.get_geometry().width, 5)
-            #window.draw_text(gc, window.get_geometry().width/2, 5, "Hello, World!", "ff0011")
             if window != self.activeWindow:
                 borderColour = preferences.theme.border.inactiveColour
             else:
@@ -129,7 +126,11 @@ class wm(object):
         self.r = set(code for code, index in self.display.keysym_to_keycodes(XK.XK_X))
         self.grabbedKeys = [self.left, self.right, self.up, self.down, self.close, self.t, self.e, self.x, self.r]
         for key in self.grabbedKeys:  # For each key to grab,
-            self.grabKey(key, X.Mod1Mask)  # Grab the key with the modifer of Alt
+            superkey = preferences.applicationDefaults.modkey
+            if (superkey == "Mod4"):
+                self.grabKey(key, X.Mod4Mask)   # Preferences.py to change this key
+            elif(superkey == "Mod1"):
+                self.grabKey(key, X.Mod1Mask)
 
     #def resizeWindow(window, direction):
     #    windowW = window.get_geometry().width
