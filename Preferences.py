@@ -13,9 +13,12 @@ Created by Dylan Hamer
 
 class preferences:
     class applicationDefaults:  # Default applications, change these to your preferred applications
-        terminal = {"name":"LXTerminal", "command":["/usr/bin/lxterminal"]}
+        terminal = {"name":"Termite", "command":["/usr/bin/termite"]}
         launcher = {"name":"Rofi", "command":["/usr/bin/rofi", "-show", "run"]}
-        browser = {"name":"Midori", "command":["/usr/bin/midori"]}
+        browser = {"name":"Firefox", "command":["/usr/bin/firefox"]}
+
+        """ Change this to X.Mod1Mask to set Alt default Button"""
+        modkey = "Mod1" # Super Button
 
     class wallpaper:
         wallpaperFile = "Wallpapers/MountainLandscape.jpeg"  # File of wallpaper
